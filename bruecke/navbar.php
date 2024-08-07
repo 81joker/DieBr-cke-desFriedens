@@ -42,7 +42,7 @@
                           <li><a href="meetings.html">Über Uns</a></li>
                           <li class="scroll-to-section"><a href="#courses">Services</a></li> 
                           <li class="scroll-to-section"><a href="#courses">Events</a></li> 
-                          <li class="scroll-to-section"><a href="#contact">Contact Us</a></li> 
+                          <li class="scroll-to-section"><a href="#contact">Contact Us XX</a></li> 
 
                           <!-- <li class="has-sub">
                             <a href="javascript:void(0)">Pages</a>
