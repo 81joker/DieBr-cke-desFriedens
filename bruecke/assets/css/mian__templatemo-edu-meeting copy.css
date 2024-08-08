@@ -36,20 +36,10 @@ set color
 */
 
 :root {
-  --primary-color: rgb(240, 55, 55); 
-  --secondary-color: rgb(174, 174, 174); 
-  --white-color: #FFFFFF;
+  --primary-color: rgb(174, 174, 174); 
+  --secondary-color: rgb(240, 55, 55); 
 }
-.btn-primary{
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: var(--white-color);
-}
-.btn-primary:hover{
-  background-color: var(--secondary-color);
-  border-color: var(--secondary-color);
 
-}
 /* 
 ---------------------------------------------
 reset
@@ -103,7 +93,7 @@ header, nav, section, article, aside, footer, hgroup {
 html, body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  background-color: var(--white-color);
+  background-color: #fff;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -146,18 +136,18 @@ global styles
 */
 html,
 body {
-  background: var(--white-color);
+  background: #fff;
   font-family: 'Poppins', sans-serif;
 }
 
 ::selection {
-  background: var(--secondary-color);
-  color: var(--white-color);
+  background: #f5a425;
+  color: #fff;
 }
 
 ::-moz-selection {
-  background: var(--secondary-color);
-  color: var(--white-color);
+  background: #f5a425;
+  color: #fff;
 }
 
 @media (max-width: 991px) {
@@ -178,9 +168,9 @@ body {
 
 .main-button-red a {
   font-size: 13px;
-  color: var(--white-color);
-  background-color: var(--primary-color);
-  /* background-color: var(--primary-color); */
+  color: #fff;
+  background-color: var(--secondary-color);
+  /* background-color: #a12c2f; */
   padding: 12px 30px;
   display: inline-block;
   border-radius: 22px;
@@ -195,9 +185,8 @@ body {
 
 .main-button-yellow a {
   font-size: 13px;
-  color: var(--white-color);
-  background-color: var(--secondary-color);
-  /* background-color: var(--secondary-color); */
+  color: #fff;
+  background-color: #f5a425;
   padding: 12px 30px;
   display: inline-block;
   border-radius: 22px;
@@ -219,7 +208,7 @@ body {
   font-size: 22px;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--white-color);
+  color: #fff;
 }
 
 
@@ -236,7 +225,7 @@ header
 }
 
 .sub-header .left-content p {
-  color: var(--white-color);
+  color: #fff;
   padding: 8px 0px;
   font-size: 13px;
 }
@@ -252,22 +241,22 @@ header
 }
 
 .sub-header .right-icons ul li a {
-  color: var(--white-color);
+  color: #fff;
   font-size: 14px;
   transition: all .3s;
 }
 
 .sub-header .right-icons ul li a:hover {
-  color: var(--secondary-color);
+  color: #f5a425;
 }
 
 .sub-header .left-content p em {
    font-style: normal;
-   color: var(--secondary-color);
+   color: #f5a425;
 }
 
 .background-header {
-  background-color: var(--white-color)!important;
+  background-color: #fff!important;
   height: 80px!important;
   position: fixed!important;
   top: 0!important;
@@ -313,7 +302,7 @@ header
 
 .header-area .main-nav .logo {
   line-height: 100px;
-  color: var(--white-color);
+  color: #fff;
   font-size: 28px;
   font-weight: 700;
   text-transform: uppercase;
@@ -360,7 +349,7 @@ header
   font-weight: 500;
   font-size: 14px;
   text-transform: uppercase;
-  color: var(--white-color);
+  color: #fff;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -373,12 +362,12 @@ header
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-  color: var(--secondary-color)!important;
+  color: #f5a425!important;
 }
 
 .background-header .main-nav .nav li:hover a,
 .background-header .main-nav .nav li a.active {
-  color: var(--secondary-color)!important;
+  color: #f5a425!important;
   opacity: 1;
 }
 
@@ -391,7 +380,7 @@ header
   font-family: FontAwesome;
   content: "\f107";
   font-size: 12px;
-  color: var(--white-color);
+  color: #fff;
   position: absolute;
   right: 5px;
   top: 12px;
@@ -439,8 +428,8 @@ header
 }
 
 .header-area .main-nav .nav li.has-sub ul li a:hover {
-  background: var(--white-color);
-  color: var(--secondary-color)!important;
+  background: #fff;
+  color: #f5a425!important;
   padding-left: 25px;
 }
 
@@ -580,7 +569,7 @@ header
 }
 
 .header-area.header-sticky .nav li a.active {
-  color: var(--secondary-color);
+  color: #f5a425;
 }
 
 @media (max-width: 1200px) {
@@ -599,7 +588,7 @@ header
   }
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
-    color: var(--secondary-color)!important;
+    color: #f5a425!important;
     opacity: 1;
   }
   .header-area.header-sticky .nav li.search-icon a {
@@ -642,7 +631,7 @@ header
   }
   .header-area .main-nav .nav li {
     width: 100%;
-    background: var(--white-color);
+    background: #fff;
     border-bottom: 1px solid #eee;
     padding-left: 0px !important;
     padding-right: 0px !important;
@@ -657,7 +646,7 @@ header
   }
   .header-area .main-nav .nav li a:hover {
     background: #eee !important;
-    color: var(--secondary-color)!important;
+    color: #f5a425!important;
   }
   .header-area .main-nav .nav li.has-sub ul.sub-menu {
     position: relative;
@@ -758,7 +747,7 @@ banner
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--white-color);
+  color: #fff;
   letter-spacing: 1px;
 }
 
@@ -768,18 +757,18 @@ banner
   font-size: 36px;
   text-transform: uppercase;
   font-weight: 800;
-  color: var(--white-color);
+  color: #fff;
   letter-spacing: 1px;
 }
 
 .main-banner .caption h2 em {
   font-style: normal;
-  color: var(--secondary-color);
+  color: #f5a425;
   font-weight: 900;
 }
 
 .main-banner .caption p {
-  color: var(--white-color);
+  color: #fff;
   font-size: 14px;
   max-width: 570px;
 }
@@ -820,7 +809,7 @@ services
   background-position: center center;
   border-radius: 20px;
   text-align: center;
-  color: var(--white-color);
+  color: #fff;
   padding: 40px;
   position: relative;
   overflow: hidden;
@@ -836,7 +825,7 @@ services
   width: 100%;
   height: 100%;
   opacity: 0.4;
-  background-color: var(--primary-color); 
+  background-color: var(--secondary-color); 
   z-index: 1;
   border-radius: 20px;
 }
@@ -861,7 +850,7 @@ services
 }
 
 .services .item p {
-  color: var(--white-color);
+  color: #fff;
   font-size: 13px;
 }
 
@@ -893,7 +882,7 @@ services
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
-  background-color: var(--white-color);
+  background-color: #fff;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -932,7 +921,7 @@ services
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
-  background-color: var(--white-color);
+  background-color: #fff;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -961,7 +950,7 @@ section.upcoming-meetings .section-heading {
 }
 
 section.upcoming-meetings .categories {
-  background-color: var(--white-color);
+  background-color: #fff;
   border-radius: 20px;
   padding: 40px;
   margin-right: 45px;
@@ -989,7 +978,7 @@ section.upcoming-meetings .categories ul li a {
 }
 
 section.upcoming-meetings .categories ul li a:hover {
-  color: var(--primary-color);
+  color: #a12c2f;
 }
 
 section.upcoming-meetings .categories .main-button-red {
@@ -1032,7 +1021,7 @@ section.upcoming-meetings .categories .main-button-red a {
 }
 
 .meeting-item .down-content {
-  background-color: var(--white-color);
+  background-color: #fff;
   padding: 30px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -1049,7 +1038,7 @@ section.upcoming-meetings .categories .main-button-red a {
   font-size: 13px;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--primary-color);
+  color: #a12c2f;
 }
 
 .meeting-item .down-content .date span {
@@ -1097,7 +1086,7 @@ section.apply-now .item {
 }
 
 section.apply-now .item h3 {
-  color: var(--white-color);
+  color: #fff;
   text-transform: uppercase;
   font-size: 24px;
   font-weight: 700;
@@ -1105,14 +1094,14 @@ section.apply-now .item h3 {
 }
 
 section.apply-now .item p {
-  color: var(--white-color);
+  color: #fff;
   margin-bottom: 20px;
 }
 
 .accordions {
   border-radius: 20px;
   padding: 40px;
-  background-color: var(--white-color);
+  background-color: #fff;
   margin-left: 45px;
 }
 .accordions .accordion {
@@ -1128,7 +1117,7 @@ section.apply-now .item p {
   color: #1f272b;
   cursor: pointer;
   transition: color 200ms ease-in-out;
-  border-bottom: 1px solid var(--white-color);
+  border-bottom: 1px solid #fff;
 }
 @media screen and (min-width: 768px) {
   .accordion-head {
@@ -1141,7 +1130,7 @@ section.apply-now .item p {
   transition: transform 200ms ease-in-out;
 }
 .accordion-head.is-open {
-  color: var(--secondary-color);
+  color: #f5a425;
   border-bottom: none;
 }
 .accordion-head.is-open .icon {
@@ -1151,7 +1140,7 @@ section.apply-now .item p {
   overflow: hidden;
   height: 0;
   transition: height 300ms ease-in-out;
-  border-bottom: 1px solid var(--white-color);
+  border-bottom: 1px solid #fff;
 }
 .accordion-body > .content {
   padding: 20px;
@@ -1176,7 +1165,7 @@ section.our-courses {
 }
 
 .our-courses .item .down-content {
-  background-color: var(--white-color);
+  background-color: #fff;
 }
 
 .our-courses .item .down-content h4 {
@@ -1197,12 +1186,12 @@ section.our-courses {
 }
 
 .our-courses .item .down-content .info ul li i {
-  color: var(--secondary-color);
+  color: #f5a425;
   font-size: 14px;
 }
 
 .our-courses .item .down-content .info span {
-  color: var(--primary-color);
+  color: #a12c2f;
   font-size: 15px;
   font-weight: 600;
   text-align: right;
@@ -1229,7 +1218,7 @@ section.our-courses {
   transition: all .5s;
   width: 7px;
   height: 7px;
-  background-color: var(--white-color);
+  background-color: #fff;
   margin: 0px 5px;
   border-radius: 50%;
   outline: none;
@@ -1260,7 +1249,7 @@ section.our-courses {
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
-  background-color: var(--white-color);
+  background-color: #fff;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -1299,7 +1288,7 @@ section.our-courses {
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
-  background-color: var(--white-color);
+  background-color: #fff;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -1324,7 +1313,7 @@ section.our-facts {
 
 section.our-facts h2 {
   font-size: 38px;
-  color: var(--white-color);
+  color: #fff;
   line-height: 50px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -1346,14 +1335,14 @@ section.our-facts h2 {
 
 .count-digit {
     margin: 5px 0px;
-    color: var(--secondary-color);
+    color: #f5a425;
     font-weight: 700;
     font-size: 36px;
 }
 .count-title {
     font-size: 18px;
     font-weight: 500;
-    color: var(--white-color);
+    color: #fff;
     letter-spacing: 0.5px;
 }
 
@@ -1393,7 +1382,7 @@ section.contact-us {
 }
 
 section.contact-us #contact {
-  background-color: var(--white-color);
+  background-color: #fff;
   border-radius: 20px;
   padding: 40px;
 }
@@ -1441,8 +1430,8 @@ section.contact-us #contact textarea {
 
 section.contact-us #contact button {
   font-size: 13px;
-  color: var(--white-color);
-  background-color: var(--primary-color);
+  color: #fff;
+  background-color: #a12c2f;
   padding: 12px 30px;
   display: inline-block;
   border-radius: 22px;
@@ -1458,7 +1447,7 @@ section.contact-us #contact button:hover {
 }
 
 section.contact-us .right-info {
-  background-color: var(--primary-color);
+  background-color: #a12c2f;
   border-radius: 20px;
   padding: 40px;
 }
@@ -1477,7 +1466,7 @@ section.contact-us .right-info ul li:last-child {
 }
 
 section.contact-us .right-info ul li h6 {
-  color: var(--white-color);
+  color: #fff;
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -1486,7 +1475,7 @@ section.contact-us .right-info ul li h6 {
 section.contact-us .right-info ul li span {
   display: block;
   font-size: 18px;
-  color: var(--white-color);
+  color: #fff;
   font-weight: 700;
 }
 
@@ -1499,11 +1488,11 @@ section.contact-us .right-info ul li span {
 .footer p {
   text-transform: uppercase;
   font-size: 14px;
-  color: var(--white-color);
+  color: #fff;
 }
 
 .footer p a {
-  color: var(--secondary-color);
+  color: #f5a425;
 }
 
 
@@ -1528,7 +1517,7 @@ section.heading-page h6 {
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--white-color);
+  color: #fff;
   letter-spacing: 1px;
 }
 
@@ -1538,7 +1527,7 @@ section.heading-page h2 {
   font-size: 36px;
   text-transform: uppercase;
   font-weight: 800;
-  color: var(--white-color);
+  color: #fff;
   letter-spacing: 1px;
 }
 
@@ -1566,8 +1555,8 @@ section.meetings-page .filters {
 
 section.meetings-page .filters li {
   font-size: 13px;
-  color: var(--primary-color);
-  background-color: var(--white-color);
+  color: #a12c2f;
+  background-color: #fff;
   padding: 11px 30px;
   display: inline-block;
   border-radius: 22px;
@@ -1580,8 +1569,8 @@ section.meetings-page .filters li {
 
 section.meetings-page .filters ul li.active,
 section.meetings-page .filters ul li:hover {
-  background-color: var(--primary-color);
-  color: var(--white-color);
+  background-color: #a12c2f;
+  color: #fff;
 }
 
 section.meetings-page .pagination {
@@ -1598,7 +1587,7 @@ section.meetings-page .pagination ul li {
 section.meetings-page .pagination ul li a {
   width: 40px;
   height: 40px;
-  background-color: var(--white-color);
+  background-color: #fff;
   border-radius: 10px;
   color: #1f272b;
   display: inline-block;
@@ -1621,8 +1610,8 @@ section.meetings-page .main-button-red a {
 
 section.meetings-page .pagination ul li.active a,
 section.meetings-page .pagination ul li a:hover {
-  background-color: var(--primary-color);
-  color: var(--white-color);
+  background-color: #a12c2f;
+  color: #fff;
 }
 
 .meeting-single-item .thumb {
@@ -1650,7 +1639,7 @@ section.meetings-page .pagination ul li a:hover {
 }
 
 .meeting-single-item .down-content {
-  background-color: var(--white-color);
+  background-color: #fff;
   padding: 40px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -1672,7 +1661,7 @@ section.meetings-page .pagination ul li a:hover {
   font-size: 13px;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--primary-color);
+  color: #a12c2f;
 }
 
 .meeting-single-item .thumb .date span {
@@ -1735,7 +1724,7 @@ section.meetings-page .pagination ul li a:hover {
 }
 
 .meeting-single-item .down-content .share ul li a:hover {
-  color: var(--secondary-color);
+  color: #f5a425;
 }
 
 /* Meeting item column */
