@@ -173,6 +173,7 @@ function bruecke_customizer( $wp_customize ){
                 'mime_type' => 'image/video'
             )));
 
+
 // 3. Blog
 // $wp_customize->add_section( 
 //     'sec_blog', 

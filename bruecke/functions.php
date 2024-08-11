@@ -72,11 +72,11 @@ function bruecke_config(){
         )
     );
 
-    // $args = array(
-    //     'height'    => 540,
-    //     'width'     => 1920
-    // );
-    // add_theme_support( 'custom-header', $args );
+    $args = array(
+        'height'    => 540,
+        'width'     => 1920
+    );
+    add_theme_support( 'custom-header', $args );
      add_theme_support( 'post-thumbnails' );
     // add_theme_support( 'custom-logo', array(
     //     'width' => 200,

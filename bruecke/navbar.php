@@ -38,7 +38,7 @@
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
-                          <li class="scroll-to-section"><a href="#top" class="active">XXXXHome</a></li>
+                          <!-- <li class="scroll-to-section"><a href="#top" class="active">XXXXHome</a></li> -->
                           <li class="scroll-to-section">
                             <a href="<?php echo esc_url(home_url()); ?>" <?php if (is_front_page()) echo 'class="active"'; ?>>Home</a>
                           </li>

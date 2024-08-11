@@ -1,7 +1,4 @@
 <?php get_header(); ?>
-<!-- Navbar start Header Area Start -->
-<?php  include('hero.php');  ?>
-<!-- ***** Banner Area  End ***** -->
 <?php
   
   while(have_posts()) {
