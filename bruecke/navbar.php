@@ -38,10 +38,15 @@
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
-                          <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                          <li class="scroll-to-section"><a href="#top" class="active">XXXXHome</a></li>
+                          <li class="scroll-to-section">
+                            <a href="<?php echo esc_url(home_url()); ?>" <?php if (is_front_page()) echo 'class="active"'; ?>>Home</a>
+                          </li>
                           <li><a href="meetings.html">Über Uns</a></li>
                           <li class="scroll-to-section"><a href="#courses">Services</a></li> 
-                          <li class="scroll-to-section"><a href="#courses">Events</a></li> 
+                          <!-- <li class="scroll-to-section"><a href="#courses">Events</a></li>  -->
+                          <li <?php if (get_post_type() == 'event' OR is_page('past-events')) echo 'class="scroll-to-section active"';  ?>><a href="<?php echo get_post_type_archive_link('event'); ?>">Events</a></li>
+
                           <li class="scroll-to-section"><a href="#contact">Contact Us XX</a></li> 
 
                           <!-- <li class="has-sub">

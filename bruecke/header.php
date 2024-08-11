@@ -21,7 +21,3 @@
          <?php  include('navbar.php');  ?>
         <!-- ***** Banner Area Start  ***** -->
 
-
-        <!-- Navbar start Header Area Start -->
-         <?php  include('hero.php');  ?>
-         <!-- ***** Banner Area  End ***** -->
