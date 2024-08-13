@@ -16,16 +16,19 @@
                                     'orderby' => 'meta_value_num',
                                     'order' => 'ASC'
                                 ));
-
+                                $loop_counter = 1;
                                 while ($homepageEvents->have_posts()) {
                                     $homepageEvents->the_post(); ?>
+                                    <?php
+                                    $eventType  = get_field('event_type');
+                                    if ( $eventType ) {
+                                    $eventType = str_replace(' ', '-', $eventType);
+                                    }
+                                    ?>
                                     <?php if (get_field('event_type')): ?>
-                                        <li class="filter" data-filter="<?php echo  get_field('event_type') ?>"><span><?php echo  get_field('event_type') ?></span></li>
+                                        <li class="filter filter-<?php echo  $loop_counter; ?>" data-filter="<?php echo  $eventType; ?>"><span><?php echo  get_field('event_type') ?></span></li>
                                     <?php endif; ?>
-                                    <!-- <li class="filter" data-filter="all"><span>Show All</span></li>
-                                    <li class="filter" data-filter="design"><span>Design Meeting</span></li>
-                                    <li class="filter" data-filter="start"><span>App Start Up</span></li>
-                                    <li class="filter" data-filter="web"><span>Web Conferences</span></li> -->
+                                    <?php  $loop_counter++;?>
                                     <?php wp_reset_postdata(); ?>
 
                                 <?php } ?>
@@ -54,19 +57,17 @@
                                         )
                                     )
                                 ));
-
+                                $loop_counter = 1;
                                 while ($homepageEvents->have_posts()) {
                                     $homepageEvents->the_post(); ?>
-                                    <li class="project-item first-child mix <?php echo  get_field('event_type') ?>">
-                                        <h1>
-                                            <?php
-                                          $eventType  = get_field('event_type');
-                                          if ( $eventType ) {
-                                            $eventType = str_replace(' ', '_', $eventType);
-                                          }
-                                            ?>
-                                        </h1>
-                                        <ul class="event-item <?php echo  get_field('event_type') ?>">
+                                    <?php
+                                    $eventType  = get_field('event_type');
+                                    if ( $eventType ) {
+                                    $eventType = str_replace(' ', '-', $eventType);
+                                    }
+                                    ?>
+                                    <li class="project-item first-child mix <?php echo  $eventType; ?>">
+                                        <ul class="event-item <?php echo  $eventType; ?>">
                                             <li>
                                                 <div class="date">
                                                     <?php $eventDate = new DateTime(get_field('event_date')); ?>
@@ -76,13 +77,12 @@
                                             <li>
                                                 <h4><?php the_title() ?></h4>
                                                 <!-- <h4>four loko franzen</h4> -->
-                                                <div class="web">
+                                                <div class="web-<?php echo $loop_counter;?>">
                                                     <span><?php echo ucwords(get_field('event_type')); ?></span>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="time">
-                                                <!-- echo $eventDate->format('l, F j, Y');  -->
                                                     <span><?php echo $eventDate->format('g:i A') ?><br><?php echo $eventDate->format('l') ?></span>
                                                 </div>
                                             </li>
@@ -94,7 +94,7 @@
                                             </li>
                                         </ul>
                                     </li>
-
+                                    <?php  $loop_counter++;?>
                                     <?php wp_reset_postdata(); ?>
 
                                 <?php } ?>

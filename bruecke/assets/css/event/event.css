@@ -305,11 +305,23 @@ p {
 	display: inline-block;
 }
 
-.event-list .web span {
+.event-list .web-1 span {
 	font-size: 13px;
 	font-weight: 600;
 	color: #b94e5e;
 	display: inline-block;
+}
+.event-list .web-2 span {
+	color: #f4bc51;
+}
+.event-list .web-3 span {
+	color: var(--secondary-color);
+}
+.event-list .web-4 span {
+	color: #f4bc51;
+}
+.event-list .web-5 span {
+	color: var(--primary-color);
 }
 
 /* .event-list .design span {
