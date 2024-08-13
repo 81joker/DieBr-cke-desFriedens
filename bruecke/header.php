@@ -33,7 +33,5 @@ if (!is_front_page()) :
         $args = ucfirst($args);
         get_template_part( 'parts/content', 'breadcrumb' , $args);
         ?>
-    <div class="container">
-
 <?php endif;?>
     

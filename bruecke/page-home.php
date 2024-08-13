@@ -5,6 +5,7 @@
 <!-- ***** Banner Area  End ***** -->
 
 <?php include('static-code.php') ?>
+<?php get_template_part('parts/content', 'event'); ?>
 
 <?php
 if (have_posts()) :
