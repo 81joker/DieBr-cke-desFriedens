@@ -42,6 +42,7 @@
                           <li class="scroll-to-section">
                             <a href="<?php echo esc_url(home_url()); ?>" <?php if (is_front_page()) echo 'class="active"'; ?>>Home</a>
                           </li>
+                          <li ><a href="<?php echo site_url('/static-page') ?>">static-page</a></li>
                           <li><a href="meetings.html">Über Uns</a></li>
                           <li class="scroll-to-section"><a href="#courses">Services</a></li> 
                           <!-- <li class="scroll-to-section"><a href="#courses">Events</a></li>  -->

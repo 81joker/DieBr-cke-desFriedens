@@ -1,112 +1,113 @@
-<section class="events" id="events-section" style="background-image: url('<?php echo get_theme_file_uri('assets/images/events-bg.png') ?>');">
-    <div class="content-wrapper">
-        <div class="inner-container container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <div class="section-heading">
-                        <div class="filter-categories">
-                            <ul class="project-filter">
-                                <li class="filter" data-filter="all"><span>Show All</span></li>
-                                <?php
-                                $today = date('Ymd');
-                                $homepageEvents = new WP_Query(array(
-                                    'posts_per_page' => 10,
-                                    'post_type' => 'event',
-                                    'meta_key' => 'event_date',
-                                    'orderby' => 'meta_value_num',
-                                    'order' => 'ASC'
-                                ));
-                                $loop_counter = 1;
-                                while ($homepageEvents->have_posts()) {
-                                    $homepageEvents->the_post(); ?>
-                                    <?php
-                                    $eventType  = get_field('event_type');
-                                    if ( $eventType ) {
-                                    $eventType = str_replace(' ', '-', $eventType);
-                                    }
-                                    ?>
-                                    <?php if (get_field('event_type')): ?>
-                                        <li class="filter filter-<?php echo  $loop_counter; ?>" data-filter="<?php echo  $eventType; ?>"><span><?php echo  get_field('event_type') ?></span></li>
-                                    <?php endif; ?>
-                                    <?php  $loop_counter++;?>
-                                    <?php wp_reset_postdata(); ?>
-
-                                <?php } ?>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-10 col-sm-12 col-md-offset-1">
-                    <div class="projects-holder">
-                        <div class="event-list">
-                            <ul>
-                                <?php
-                                $today = date('Ymd');
-                                $homepageEvents = new WP_Query(array(
-                                    'posts_per_page' => 10,
-                                    'post_type' => 'event',
-                                    'meta_key' => 'event_date',
-                                    'orderby' => 'meta_value_num',
-                                    'order' => 'ASC',
-                                    'meta_query' => array(
-                                        array(
-                                            'key' => 'event_date',
-                                            'compare' => '>=',
-                                            'value' => $today,
-                                            'type' => 'numeric'
-                                        )
-                                    )
-                                ));
-                                $loop_counter = 1;
-                                while ($homepageEvents->have_posts()) {
-                                    $homepageEvents->the_post(); ?>
-                                    <?php
-                                    $eventType  = get_field('event_type');
-                                    if ( $eventType ) {
-                                    $eventType = str_replace(' ', '-', $eventType);
-                                    }
-                                    ?>
-                                    <li class="project-item first-child mix <?php echo  $eventType; ?>">
-                                        <ul class="event-item <?php echo  $eventType; ?>">
-                                            <li>
-                                                <div class="date">
-                                                    <?php $eventDate = new DateTime(get_field('event_date')); ?>
-                                                    <span><?php echo $eventDate->format('d') ?><br><?php echo $eventDate->format('M'); ?></span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <h4><?php the_title() ?></h4>
-                                                <!-- <h4>four loko franzen</h4> -->
-                                                <div class="web-<?php echo $loop_counter;?>">
-                                                    <span><?php echo ucwords(get_field('event_type')); ?></span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="time">
-                                                    <span><?php echo $eventDate->format('g:i A') ?><br><?php echo $eventDate->format('l') ?></span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="white-button">
-                                                    <a href="<?php the_permalink(); ?>">Read More</a>
-                                                    <!-- <a href="#">I am interested</a> -->
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <?php  $loop_counter++;?>
-                                    <?php wp_reset_postdata(); ?>
-
-                                <?php } ?>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+<section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+            <div class="section-heading text-center pt-5">
+              <h2>Upcoming Meetings</h2>
             </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="filters">
+                <ul>
+                  <li data-filter="*"  class="active">All Meetings</li>
+                  <?php
+                      $today = date('Ymd');
+                      $homepageEvents = new WP_Query(array(
+                          'posts_per_page' => 10,
+                          'post_type' => 'event',
+                          'meta_key' => 'event_date',
+                          'orderby' => 'meta_value_num',
+                          'order' => 'ASC'
+                      ));
+                      $loop_counter = 1;
+                      $lastEventType = ''; 
+                      while ($homepageEvents->have_posts()) {
+                          $homepageEvents->the_post(); ?>
+                          <?php
+                          $eventType  = get_field('event_type');
+                          if ( $eventType ) {
+                          $eventType = str_replace(' ', '-', $eventType);
+                          }
+                 
+                          ?>
+                   <?php if ($eventType !== $lastEventType): ?>
+                      <li data-filter=".<?php echo  $eventType; ?>"><?php echo  get_field('event_type') ?></li>
+                      <?php $lastEventType = $eventType; ?>
+                   <?php endif; ?>
+                  <?php wp_reset_postdata(); ?>
+
+                  <?php } ?>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="row grid">
+              <?php
+                  $today = date('Ymd');
+                  $homepageEvents = new WP_Query(array(
+                      'posts_per_page' => 10,
+                      'post_type' => 'event',
+                      'meta_key' => 'event_date',
+                      'orderby' => 'meta_value_num',
+                      'order' => 'ASC',
+                      'meta_query' => array(
+                          array(
+                              'key' => 'event_date',
+                              'compare' => '>=',
+                              'value' => $today,
+                              'type' => 'numeric'
+                          )
+                      )
+                  ));
+                  $loop_counter = 1;
+                  while ($homepageEvents->have_posts()) {
+                      $homepageEvents->the_post(); ?>
+                      <?php
+                      $eventType  = get_field('event_type');
+                      if ( $eventType ) {
+                      $eventType = str_replace(' ', '-', $eventType);
+                      }
+                      ?>
+
+                <div class="col-lg-4 templatemo-item-col all <?php echo $eventType  ?>">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <!-- <div class="price">
+                        <span>$14.00</span>
+                      </div> -->
+                      <?php if ( has_post_thumbnail() ) : ?>
+                      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                        <?php echo the_post_thumbnail(array(370 , 215)); ?></a>
+                      <?php endif; ?>
+                    </div>
+                    <div class="down-content">
+                      <div class="date">
+                      <?php $eventDate = new DateTime(get_field('event_date')); ?>
+                        <h6><?php echo $eventDate->format('M'); ?> <span><?php echo $eventDate->format('d') ?></span></h6>
+                      </div>
+                      <a href="meeting-details.html"><h4><?php echo the_title() ?></h4></a>
+                      <p><?php echo wp_trim_words(get_the_content(), 18); ?></p>
+                    </div>
+                  </div>
+                </div>
+                <?php  $loop_counter++;?>
+                    <?php wp_reset_postdata(); ?>
+
+                <?php } ?>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="pagination">
+                <ul>
+                  <li><a href="#">1</a></li>
+                  <li class="active"><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</section>
-
-
-
+  </section>

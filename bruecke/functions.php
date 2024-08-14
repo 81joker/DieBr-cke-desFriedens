@@ -91,7 +91,7 @@ function bruecke_config()
     );
 
     $args = array(
-        'height'    => 540,
+        'height'    => 425,
         'width'     => 1920
     );
     add_theme_support('custom-header', $args);
