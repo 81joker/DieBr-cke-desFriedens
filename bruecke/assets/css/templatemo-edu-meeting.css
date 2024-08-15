@@ -2005,7 +2005,7 @@ section.gallery-page {
 }
 
 .gallery .gallery-item:hover .gallery-content .gallery-inner {
-  background: var(--body-color);
+  background: var(--secondary-color);
   padding: 50px 0;
   display: flex;
   flex-direction: column;
