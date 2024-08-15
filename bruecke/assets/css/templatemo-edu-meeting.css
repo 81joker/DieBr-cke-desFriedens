@@ -53,6 +53,7 @@ set color
 .text-primary{
   color: var(--primary-color) !important;
 }
+
 /* 
 ---------------------------------------------
 reset
@@ -1914,7 +1915,21 @@ responsive
   
 }
 
-/* .single-event-img > img {
-  height: 420px;
-opacity: 0.4;
-} */
+
+/* 
+---------------------------------------------
+Breadcrumb
+--------------------------------------------- 
+*/
+
+.breadcrumb .breadcrumb-item > a{
+color: var(--white-color) !important;
+}
+.breadcrumb .breadcrumb-item > a:hover{
+color: var(--primary-color) !important;
+}
+
+.breadcrumb-item::before {
+color: var(--white-color) !important;
+padding-left: .5rem;
+}

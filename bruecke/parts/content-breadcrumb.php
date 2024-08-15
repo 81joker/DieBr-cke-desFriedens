@@ -10,8 +10,10 @@
       </div>
       <ol class="breadcrumb justify-content-center mb-0">
           <!-- <li class="breadcrumb-item"><a href="#">Pages</a></li> -->
-            <li class="breadcrumb-item"><a href="<?php echo site_url('/') ?>">Home</a></li>&nbsp&nbsp&nbsp/
-            <li class="breadcrumb-item active text-white ps-0"><?= (($args )?$args:'')?></li>
+            <li class="breadcrumb-item active "><a href="<?php echo site_url('/') ?>">Home</a></li>
+            <li class="breadcrumb-item breadcrumb-item-second text-white ps-0">
+              <?php echo (($args )?$args:'')?>
+            </li>
         </ol>    
     </div>
   </section>
