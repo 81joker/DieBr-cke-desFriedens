@@ -119,7 +119,8 @@ a {
 }
 
 a:hover {
-	color: #FC3;
+	color: #00f;
+	/* color: #FC3; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -183,7 +184,6 @@ body {
   font-size: 13px;
   color: var(--white-color);
   background-color: var(--primary-color);
-  /* background-color: var(--primary-color); */
   padding: 12px 30px;
   display: inline-block;
   border-radius: 22px;
@@ -194,7 +194,8 @@ body {
 
 .main-button-red a:hover {
   opacity: 0.9;
-}
+  background-color: var(--white-color)!important;
+  color: var(--primary-color)!important;}
 
 .main-button-yellow a {
   font-size: 13px;
@@ -1639,7 +1640,6 @@ section.meetings-page .main-button-red {
 section.meetings-page .main-button-red a {
   padding: 12px 60px;
   text-align: center;
-  margin-top: 30px;
 }
 
 section.meetings-page .pagination ul li.active a,
