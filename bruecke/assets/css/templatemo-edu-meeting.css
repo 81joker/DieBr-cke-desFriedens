@@ -1889,6 +1889,7 @@ responsive
   section.contact-us #contact {
     margin-bottom: 30px;
   }
+  
 
 }
 
@@ -1910,4 +1911,10 @@ responsive
     color: #1f272b;
   }
 
+  
 }
+
+/* .single-event-img > img {
+  height: 420px;
+opacity: 0.4;
+} */

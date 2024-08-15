@@ -72,10 +72,13 @@
                 <div class="col-lg-4 templatemo-item-col all <?php echo $eventType  ?>">
                   <div class="meeting-item">
                     <div class="thumb">
+                      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                       <?php if (has_post_thumbnail()) : ?>
-                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                          <?php echo the_post_thumbnail(array(370, 215)); ?></a>
-                      <?php endif; ?>
+                          <?php echo the_post_thumbnail(array(470, 215)); ?>
+                          <?php else: ?>
+                         <img src="<?php echo get_theme_file_uri('assets/images/default-img.jpg') ?>" alt="<?php the_title_attribute(); ?>" height="215" width="370">
+                         <?php endif; ?>
+                        </a>                  
                     </div>
                     <div class="down-content">
                       <div class="date">

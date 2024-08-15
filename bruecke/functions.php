@@ -136,3 +136,12 @@ function bruecke_adjust_queries($query)
 }
 
 add_action('pre_get_posts', 'bruecke_adjust_queries');
+
+function add_class_to_content($content) {
+    if (is_singular('event')) {
+        $content = preg_replace('/<p([^>]*)>/', '<p$1 class="description">', $content, 1);
+        return $content;
+    }
+    return $content;
+}
+add_filter('the_content', 'add_class_to_content');
