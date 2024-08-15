@@ -1,5 +1,6 @@
      <!-- Gallery Start -->
-     <div class="container-fluid gallery py-5 my-5 px-0">
+     <section class="gallery gallery-page" id="gallery">
+     <div class="container-fluid gallery py-5  px-0">
             <div class="text-center mx-auto pb-5" style="max-width: 800px;">
                 <h5 class="text-uppercase text-primary">Our work</h5>
                 <h1 class="mb-4">We consider environment welfare</h1>
@@ -74,4 +75,5 @@
                 </div>
             </div>
         </div>
+     </section>
         <!-- Gallery End -->

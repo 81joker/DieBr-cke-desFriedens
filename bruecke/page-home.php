@@ -25,4 +25,11 @@ if (have_posts()) :
 
 
 
+
+
+<!-- Our Work Start -->
+<?php get_template_part('parts/content', 'our-work'); ?>
+<!-- Our Work End -->
+
+
 <?php get_footer(); ?>

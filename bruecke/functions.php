@@ -8,6 +8,7 @@ function bruecke_load_scripts()
 
     // Bootstrap core CSS
     wp_enqueue_style('bruecke-template-style', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.min.css');
+    wp_enqueue_style('custom-google-fonts', '//use.fontawesome.com/releases/v5.15.4/css/all.css');
 
 
     /** Additional CSS File **/
