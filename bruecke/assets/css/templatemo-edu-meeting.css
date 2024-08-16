@@ -2023,7 +2023,6 @@ section.gallery-page {
   transition: 0.5s;
   z-index: 3;
 }
-
 .gallery .gallery-item:hover .search-icon {
   opacity: 1;
 }

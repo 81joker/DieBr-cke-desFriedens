@@ -1,4 +1,6 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
 require get_template_directory() . '/inc/customizer.php';
 
 function bruecke_load_scripts()
@@ -57,20 +59,11 @@ function bruecke_load_scripts()
 
 
     wp_enqueue_script('lightbox-js', get_template_directory_uri() . '/assets/js/owl-carousel.js', array('jquery'), '1.0', true);
-    // wp_enqueue_script('bruecke-owl-carousel-js', get_theme_file_uri('/assets/js/owl-carousel.js'), array('jquery'), '1.0', true);
 
 
     wp_enqueue_script('lightbox-js', get_template_directory_uri() . '/assets/js/lightbox.js', array('jquery'), '1.0', true);
-    // wp_enqueue_script('bruecke-lightbox-js', get_theme_file_uri('/assets/js/lightbox.js'), array('jquery'), '1.0', true);
-
-
     wp_enqueue_script('bruecke-tabs-js', get_template_directory_uri() . '/assets/js/tabs.js', array('jquery'), '1.0', true);
-    // wp_enqueue_script('bruecke-tabs-js', get_theme_file_uri('/assets/js/tabs.js'), array('jquery'), '1.0', true);
-
-
     wp_enqueue_script('bruecke-video-js', get_template_directory_uri() . '/assets/js/video.js', array('jquery'), '1.0', true);
-    // wp_enqueue_script('bruecke-video-js', get_theme_file_uri('/assets/js/video.js'), array('jquery'), '1.0', true);
-
     wp_enqueue_script('slick-slider-js', get_template_directory_uri() . '/assets/js/slick-slider.js', array('jquery'), '', true);
 
 
@@ -138,6 +131,8 @@ function bruecke_adjust_queries($query)
 
 add_action('pre_get_posts', 'bruecke_adjust_queries');
 
+
+// Add class in Single Event content
 function add_class_to_content($content) {
     if (is_singular('event')) {
         $content = preg_replace('/<p([^>]*)>/', '<p$1 class="description">', $content, 1);
@@ -146,3 +141,93 @@ function add_class_to_content($content) {
     return $content;
 }
 add_filter('the_content', 'add_class_to_content');
+
+
+// Send Email 
+
+// function mailtrap($phpmailer) {
+//     $phpmailer->SMTPDebug = 2; 
+//     $phpmailer->isSMTP();
+//     $phpmailer->Host = 'sandbox.smtp.mailtrap.io';
+//     $phpmailer->SMTPAuth = true;
+//     $phpmailer->Port = 587;
+//     $phpmailer->Username = '4892bdcb15d23c';
+//     $phpmailer->Password = 'bcacc18f1f8e31';
+// }
+
+// add_action('phpmailer_init', 'mailtrap');
+
+add_action('phpmailer_init', 'custom_phpmailer_settings');
+function custom_phpmailer_settings($phpmailer) {
+    $phpmailer->isSMTP();
+    $phpmailer->Host = 'smtp.gmail.com';
+    $phpmailer->SMTPAuth = true;
+    $phpmailer->Username = 'nehad.al.timimi@gmail.com';
+    $phpmailer->Password = 'tpvfycvrobkerxot';
+    $phpmailer->SMTPSecure = 'tls';
+    $phpmailer->Port = 587;
+    $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $phpmailer->SMTPDebug = 0; 
+}
+
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['contact_nonce']) && wp_verify_nonce($_POST['contact_nonce'], 'contact_form_nonce')) {
+    // if (wp_verify_nonce($_POST['contact_nonce'], 'contact_form_nonce')) {
+
+    $to = 'nehad.al.timimi@gmail.com';  // Replace with your email address
+    $subject = sanitize_text_field($_POST['subject']);
+    $name = sanitize_text_field($_POST['name']);
+    $email = sanitize_email($_POST['email']);
+    $message_content = sanitize_textarea_field($_POST['message']);
+    
+    $message = "<h1>Contact Form Submission</h1>";
+    $message .= "<p><strong>Name:</strong> $name</p>";
+    $message .= "<p><strong>Email:</strong> $email</p>";
+    $message .= "<p><strong>Message:</strong><br>$message_content</p>";
+    
+    // Set headers for HTML email
+    $headers = array('Content-Type: text/html; charset=UTF-8', 'From: ' . $name . ' <' . $email . '>');
+     send_custom_email($to, $subject, $message, $headers);
+
+
+
+    wp_redirect(home_url('/kontakt'));
+    exit;
+} 
+function send_custom_email($to, $subject, $message, $headers = '') {
+    if (wp_mail($to, $subject, $message, $headers)) {
+        return array(
+            'success' => true,
+            'message' => 'Email sent successfully!'
+        );
+    } else {
+        return array(
+            'success' => false,
+            'message' => 'Failed to send email.'
+        );
+    }
+}
+
+
+
+// function send_custom_email($to, $subject, $message, $headers = '') {
+//     if (wp_mail($to, $subject, $message, $headers)) {
+//         echo "Email sent successfully!";
+//     } else {
+//         echo "Failed to send email.";
+//     }
+// }
+
+
+// add_action('phpmailer_init', 'custom_phpmailer_settings');
+// function custom_phpmailer_settings($phpmailer) {
+//     $phpmailer->isSMTP();
+//     $phpmailer->Host = 'smtp.gmail.com';
+//     $phpmailer->SMTPAuth = true;
+//     $phpmailer->Username = 'nehad.al.timimi@gmail.com';
+//     $phpmailer->Password = 'tpvfycvrobkerxot';
+//     $phpmailer->SMTPSecure = 'tls';
+//     $phpmailer->Port = 587;
+//     $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+//     $phpmailer->SMTPDebug = 2; 
+// }

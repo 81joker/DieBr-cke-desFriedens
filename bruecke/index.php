@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-<?php include('static-code.php') ?>
 
 <?php
 if (have_posts()) :

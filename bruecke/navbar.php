@@ -47,6 +47,7 @@
                           <li <?php if (get_post_type() == 'event' OR is_page('past-events')) echo 'class="scroll-to-section active"';  ?>><a href="<?php echo get_post_type_archive_link('event'); ?>">Events</a></li>
 
                           <li class="scroll-to-section"><a href="<?php echo site_url('/kontakt') ?>">kontakt</a></li> 
+                          <li class="scroll-to-section"><a href="<?php echo site_url('/contact') ?>">Contact</a></li> 
                       </ul>        
                       <a class='menu-trigger'>
                           <span>Menu</span>
