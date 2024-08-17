@@ -8,7 +8,7 @@
             </div>
             <div class="row g-4 row-cols-4">
                 <?php $countLoop = 0 ?>
-                <?php for ($i=1; $i < 5 ; $i++) : ?>
+                <?php for ($i=0; $i < 10 ; $i++) : ?>
                     <div class="gallery-item" style="height: 400px;">
                         <img src="<?php echo get_theme_file_uri('img/gallery-' . $i . '.jpg');?>" class="img-fluid w-100" alt="">
                         <div class="search-icon">
@@ -28,3 +28,4 @@
         </div>
      </section>
         <!-- Gallery End -->
+

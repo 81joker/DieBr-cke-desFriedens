@@ -31,7 +31,7 @@
 
                   ?>
                   <?php if ($eventType !== $lastEventType): ?>
-                    <li data-filter=".<?php echo  $eventType; ?>"><?php echo  get_field('event_type') ?></li>
+                    <li data-filter=".<?php echo  $eventType; ?>" class="my-2"><?php echo  get_field('event_type') ?></li>
                     <?php $lastEventType = $eventType; ?>
                   <?php endif; ?>
                   <?php wp_reset_postdata(); ?>
