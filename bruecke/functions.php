@@ -110,34 +110,51 @@ function bruecke_config()
 add_action('after_setup_theme', 'bruecke_config', 0);
 
 
-/**
- * Register the custom gallery block.
- */
-function bruecke_register_block_styles(){
-    wp_register_style( 'bruecke-block-style', get_template_directory_uri() . '/block-style.css' );
-    // register_block_style(
-    //     'core/gallery',
-    //     array(
-    //         'name'  => 'red-quote',
-    //         'label' => 'Red Quote',
-    //         'is_default'    => true,
-    //         //'inline_style'  => '.wp-block-quote.is-style-red-quote { border-left: 7px solid #ff0000; background: #f9f3f3; padding: 10px 20px; }',
-    //         'style_handle' => 'bruecke-block-style'
-    //     )
-    // );
-    register_block_style(
-        'core/gallery',
-        array(
-            'name'  => 'gallery',
-            'label' => 'Gallery Images',
-            'is_default'    => true,
-            'style_handle' => 'bruecke-block-style',
-            
-        )
-    );
-}
-add_action( 'init', 'bruecke_register_block_styles' );
 
+/* 
+---------------------------------------------
+Register the custom gallery block.
+--------------------------------------------- 
+*/
+function my_custom_gallery_block($block_content, $block) {
+    if ($block['blockName'] === 'core/gallery') {
+      // Modify the gallery block HTML
+      $block_content = '<section class="gallery gallery-page" id="gallery">
+          <div class="container-fluid gallery py-5  px-0"> '
+ . $block_content .
+      '</div>
+      </section>';
+    }
+    if ($block['blockName'] === 'core/gallery') {
+      // Modify the gallery block HTML
+      $block_content = '<section class="gallery gallery-page" id="gallery">
+          <div class="container-fluid gallery py-1  px-0"> '
+ . $block_content .
+      '</div>
+      </section>';
+    }
+    if ($block['blockName'] === 'core/group') {
+      // Modify the gallery block HTML
+      $block_content = '<section class="group-page" id="group">
+          <div class="ontainer-fluid group py-5  px-0"> '
+ . $block_content .
+      '</div>
+      </section>';
+    }
+    return $block_content;
+  }
+  add_filter('render_block', 'my_custom_gallery_block', 10, 2);
+
+
+
+  add_filter( 'block_editor_settings_all', 'remove_gallery_columns_setting' );
+  function remove_gallery_columns_setting( $settings ) {
+      if ( isset( $settings['allowedBlockTypes']['core/gallery'] ) ) {
+          // Remove the "columns" attribute from the Gallery block
+          unset( $settings['allowedBlockTypes']['core/gallery']['attributes']['columns'] );
+      }
+      return $settings;
+  }
 
 
 
